@@ -1,6 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define STACK_MODE 0
+#define QUEUE_MODE 1
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,6 +11,7 @@
 #include <unistd.h>
 #include <ctype.h>
 
+extern int mode; 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer

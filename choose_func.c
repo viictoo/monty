@@ -51,5 +51,9 @@ void push_func(stack_t **stack, unsigned int line_number)
 	}
 
 	n = atoi(value);
-	add_dnodeint(stack, n);
+	if (mode == STACK_MODE)
+		add_dnodeint(stack, n);
+	else if (mode == QUEUE_MODE)
+		add_dnodeint_end(stack, n);
+
 }
