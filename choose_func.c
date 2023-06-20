@@ -2,13 +2,15 @@
 
 void (*pick_func(char *s))(stack_t **, unsigned int)
 {
+
+	int i = 0;
 	instruction_t insts[] = {
 		{ "push", push_func},
 		{ "pall", pall},
 		{ "pint", pint_func},
+		{ "pop", pop_func},
 		{ NULL, NULL }
 	};
-	int i = 0;
 
 	while (insts[i].opcode)
 	{

@@ -43,4 +43,5 @@ void pall(stack_t **stack, unsigned int line_number);
 void (*pick_func(char *s))(stack_t **, unsigned int);
 void push_func(stack_t **stack, unsigned int line_number);
 void pint_func(stack_t **stack, unsigned int line_number);
+void pop_func(stack_t **head, unsigned int line_number);
 #endif /* MONTY_H*/

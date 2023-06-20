@@ -12,11 +12,14 @@ void add_dnodeint(stack_t **head, unsigned int n)
 	stack_t *ptr;
 
 	if (!head)
-		perror("no head");
+	{
+        exit(EXIT_FAILURE);
+	}
 	ptr  = malloc(sizeof(stack_t));
     if (!ptr)
     {
-        perror("malloc");
+		fprintf(stderr, "Error: malloc failed");
+        exit(EXIT_FAILURE);
     }
 	ptr->n = n;
 	ptr->next = *head;
@@ -41,7 +44,7 @@ void pall(stack_t **stack, unsigned int line_number)
     (void) line_number;
 
 	if (!h)
-		perror("no head");
+		exit(EXIT_FAILURE);
 
 	while (h)
 	{
