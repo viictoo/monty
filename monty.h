@@ -45,4 +45,9 @@ void push_func(stack_t **stack, unsigned int line_number);
 void pint_func(stack_t **stack, unsigned int line_number);
 void pop_func(stack_t **head, unsigned int line_number);
 void swap_func(stack_t **head, unsigned int line_number);
+void add_func(stack_t **head, unsigned int line_number);
+void nop_func(stack_t **head, unsigned int line_number);
+void mul_func(stack_t **head, unsigned int line_number);
+void mod_func(stack_t **head, unsigned int line_number);
+void pchar_func(stack_t **head, unsigned int line_number);
 #endif /* MONTY_H*/
