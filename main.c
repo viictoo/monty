@@ -4,9 +4,11 @@
 int main(int ac, char **av)
 {
     FILE *fp;
-    char opcode;
+    char *opcode;
     int line_number = 1;
-    int err_flag = 0;
+    char *instruct = NULL;
+    void (*instruction_func)(stack_t **, unsigned int);
+    stack_t *stack = NULL;
 
     if (ac != 2)
     {
@@ -29,9 +31,20 @@ int main(int ac, char **av)
 
     while (fgets(opcode, BUFFER_SIZE, fp) != NULL)
     {
-        if(!isValidInstruction(opcode))
+        instruct = strtok(opcode, "\t\n ");
+        if (instruct[0] == '#')
         {
-            fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+            line_number++;
+            continue;
+        }
+        instruction_func = pick_func(instruct);
+        if (instruction_func)
+        {
+            instruction_func(&stack, line_number);
+        }
+        else
+        {
+            fprintf(stderr, "L%d: unknown instruction %s\n", line_number, instruct);
             free(opcode);
             fclose(fp);
             exit(EXIT_FAILURE);
