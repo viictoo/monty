@@ -46,6 +46,8 @@ void pint_func(stack_t **stack, unsigned int line_number);
 void pop_func(stack_t **head, unsigned int line_number);
 void swap_func(stack_t **head, unsigned int line_number);
 void add_func(stack_t **head, unsigned int line_number);
+void sub_func(stack_t **head, unsigned int line_number);
+void div_func(stack_t **head, unsigned int line_number);
 void nop_func(stack_t **head, unsigned int line_number);
 void mul_func(stack_t **head, unsigned int line_number);
 void mod_func(stack_t **head, unsigned int line_number);

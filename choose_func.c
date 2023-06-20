@@ -11,6 +11,8 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 		{ "pop", pop_func},
 		{ "swap", swap_func},
 		{ "add", add_func},
+		{ "sub", sub_func},
+		{ "div", div_func},
 		{ "nop", nop_func},
 		{ "mul", mul_func},
 		{ "mod", mod_func},
