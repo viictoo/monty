@@ -9,6 +9,7 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 		{ "pall", pall},
 		{ "pint", pint_func},
 		{ "pop", pop_func},
+		{ "swap", swap_func},
 		{ NULL, NULL }
 	};
 
