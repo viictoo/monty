@@ -17,6 +17,7 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 		{ "mul", mul_func},
 		{ "mod", mod_func},
 		{ "pchar", pchar_func},
+		{ "pstr", pstr_func},
 		{ NULL, NULL }
 	};
 

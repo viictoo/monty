@@ -31,6 +31,11 @@ int main(int ac, char **av)
 
     while (fgets(opcode, BUFFER_SIZE, fp) != NULL)
     {
+        if (opcode[0] == '\n')
+         {
+            line_number++;
+            continue;
+        }
         instruct = strtok(opcode, "\t\n ");
         if (instruct[0] == '#')
         {
