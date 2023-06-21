@@ -1,5 +1,13 @@
 #include "monty.h"
 
+
+/**
+ * pick_func - Picks a function based on the given string.
+ * @s: The string used to determine the function to be picked.
+ * Return: Pointer to a function that takes stack_t**
+ * and unsigned int as arguments,
+ * or NULL if no matching function is found.
+ */
 void (*pick_func(char *s))(stack_t **, unsigned int)
 {
 
@@ -33,6 +41,15 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 
 	return (NULL);
 }
+
+
+/**
+ * push_func - Pushes an element onto the stack.
+ * @stack: Double pointer to the head of the stack.
+ * @line_number: The line number where the function is called.
+ * Return: Nothing
+ */
+
 void push_func(stack_t **stack, unsigned int line_number)
 {
 	char *value = strtok(NULL, "\t\n ");
