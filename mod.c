@@ -12,7 +12,7 @@ void mod_func(stack_t **head, unsigned int line_number)
 {
 	stack_t *current = *head;
 
-	if ((*head)->next == NULL)
+	if (!(*head) || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
         free_stack(*head);
