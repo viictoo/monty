@@ -58,12 +58,20 @@ void push_func(stack_t **stack, unsigned int line_number)
 	if (!value)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
 	if (!isdigit(value[0]) && value[0] != '-')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	if (value == NULL || !is_integer(value))
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 

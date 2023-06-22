@@ -10,6 +10,7 @@
 #include <stddef.h>
 #include <unistd.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 extern int mode;
 /**
@@ -64,4 +65,6 @@ void validate_arguments(int ac, char **av);
 void handle_unknown_instruction(int line_number, char *instruct,
 		char *opcode, FILE *fp);
 void parse_file(FILE *fp);
+void free_stack(stack_t *stack);
+bool is_integer(const char *str);
 #endif /* MONTY_H*/
