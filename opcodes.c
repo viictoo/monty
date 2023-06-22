@@ -40,17 +40,12 @@ void add_dnodeint(stack_t **head, unsigned int n)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	unsigned int i = 0;
 	stack_t *h = *stack;
 	(void) line_number;
-
-	if (!h)
-		exit(EXIT_FAILURE);
 
 	while (h)
 	{
 		printf("%d\n", h->n);
 		h = h->next;
-		i++;
 	}
 }
