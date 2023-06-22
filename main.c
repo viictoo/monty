@@ -68,9 +68,10 @@ void handle_unknown_instruction(int line_number, char *instruct,
 
 int main(int ac, char **av)
 {
-	FILE *fp = open_file(av[1]);
+	FILE *fp = NULL;
 
 	validate_arguments(ac, av);
+	fp = open_file(av[1]);
 	parse_file(fp);
 	return (0);
 }
