@@ -1,14 +1,14 @@
-,                           ;read character and store it in p1
------------------------------------------------- ;return ascii to Dec
->                           ;move pointer to p2 (second byte)
-,                           ;read character and store it in p2
------------------------------------------------- ;return ascii to Dec
-[                	            ; enter loop
-	-                           ; decrement p2
-		<                           ; move to p1
-			+                           ; increment p1
-				>                           ; move to p2
-]	                            ; we exit the loop when the last cell is empty
-<       	                    ;go back to p1
-++++++++++++++++++++++++++++++++++++++++++++++++     ;return Dec to ascii
-.                           ;print p1
+,                           ;read and store char in c1
+------------------------------------------------ ;ascii to decimal
+>                           ;move ptr to p2
+,                           ;read and store char in c2
+------------------------------------------------ ;ascii to decimal
+[                	            ; begin loop
+	-                           ; dec c2
+		<                           ; go to c1
+			+                           ; inc c1
+				>                           ; move to c2
+]	                            ; cell empty so exit the loop
+<       	                    ;c1
+++++++++++++++++++++++++++++++++++++++++++++++++     ;return ascii equivalent
+.                           ;print output in c1

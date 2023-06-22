@@ -1,19 +1,19 @@
-read int cell 1 and 2 
+read integer from c1 and c2
 >, >, <<
-convert from ascii to values
+convert from ascii to decimal
 +++++ +
 [
 	 >----- ---
 	  >----- ---
 	   <<-
 ]
-find the product
+multiply
 >[
 	 >[>+>+<<-]
 	  >[<+>-]
 	   <<-
 ]
-separate the tens and ones position
+separate tens and ones values
 >[-]>+> >+++++ +++++<
 [
 	 - >- [>>>]+++++ +++++<<+
@@ -21,14 +21,14 @@ separate the tens and ones position
 ]
 <-
 <+++++ +++++>>>[-<<<->>>]<<<
-convert back to ascii
+return decimal from ascii
 <+++++ +
 [
 	 >+++++ +++>
 	  [+++++ +++>]
 	   <[<]>-
 ]
-output the two separately
+print numbers separately
 >>[.<<]<[<<]>>.
-add new line
+newline
 >>>>>++++++++++.
