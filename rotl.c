@@ -9,13 +9,20 @@
  */
 void rotl_func(stack_t **head, unsigned int line_number)
 {
-	int data;
+	stack_t *current = *head;
+	unsigned int data = 0;
 
-	if (*head)
+	(void) line_number;
+
+	if (current && current->next)
 	{
-		data = (*head)->n;
-		pop_func(head, line_number);
-		add_dnodeint_end(head, data);
+		while (current->next != NULL)
+		{
+			data = current->n;
+			current->n = current->next->n;
+			current->next->n = data;
+			current = current->next;
+		}
 	}
 }
 

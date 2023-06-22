@@ -9,19 +9,19 @@
 
 void rotr_func(stack_t **head, unsigned int line_number)
 {
-	int data;
-	stack_t *current = *head;
+	stack_t *temp = NULL;
 
-	(void)line_number;
+	(void) line_number;
 
-	while (current->next)
+	if (*head && (*head)->next)
 	{
-		current = current->next;
+		temp = *head;
+		while (temp->next != NULL)
+			temp = temp->next;
+
+		temp->prev->next = NULL;
+		temp->next = *head;
+
+		*head = temp;
 	}
-
-	data = current->n;
-	current->prev->next = NULL;
-	free(current);
-	add_dnodeint(head, data);
-
 }
