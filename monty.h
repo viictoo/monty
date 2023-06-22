@@ -3,6 +3,7 @@
 
 #define STACK_MODE 0
 #define QUEUE_MODE 1
+#define BUFFER_SIZE 10000
 
 #include <string.h>
 #include <stdio.h>
@@ -67,4 +68,7 @@ void handle_unknown_instruction(int line_number, char *instruct,
 void parse_file(FILE *fp);
 void free_stack(stack_t *stack);
 bool is_integer(const char *str);
+
+void handle_instruction(stack_t **stack, unsigned int line_number,
+char *instruct, char *opcode, FILE *fp);
 #endif /* MONTY_H*/
