@@ -101,6 +101,7 @@ void parse_file(FILE *fp)
 		line_number++;
 	}
 	free(opcode);
+    free_stack(stack);
 	fclose(fp);
 }
 
