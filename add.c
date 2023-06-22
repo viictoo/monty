@@ -15,6 +15,7 @@ void add_func(stack_t **head, unsigned int line_number)
 	if ((*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+        free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	(*head)->next->n += (*head)->n;
