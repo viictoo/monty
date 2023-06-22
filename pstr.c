@@ -18,14 +18,11 @@ void pstr_func(stack_t **stack, unsigned int line_number)
 	head = *stack;
 	while (head)
 	{
-		if (head->n > 0 && head->n <= 127)
-			printf("%c", head->n);
-		else
-		{
-			printf("\n");
-			exit(EXIT_FAILURE);
-		}
+		if (head->n <= 0 || head->n > 127)
+			break;
+		printf("%c", head->n);
 		head = head->next;
 	}
 	printf("\n");
 }
+

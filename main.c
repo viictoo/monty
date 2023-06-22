@@ -45,12 +45,14 @@ FILE *open_file(char *filename)
  * @instruct: The unknown instruction.
  * @opcode: The opcode string.
  * @fp: The file pointer.
+ * @stack: head node
  * Return: Nothing.
  */
 void handle_unknown_instruction(int line_number, char *instruct,
-		char *opcode, FILE *fp)
+		char *opcode, FILE *fp, stack_t **stack)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, instruct);
+	free_stack(*stack);
 	free(opcode);
 	fclose(fp);
 	exit(EXIT_FAILURE);
@@ -96,12 +98,12 @@ void parse_file(FILE *fp)
 			if (instruction_func)
 				instruction_func(&stack, line_number);
 			else
-				handle_unknown_instruction(line_number, instruct, opcode, fp);
+				handle_unknown_instruction(line_number, instruct, opcode, fp, &stack);
 		}
 		line_number++;
 	}
 	free(opcode);
-    free_stack(stack);
+	free_stack(stack);
 	fclose(fp);
 }
 

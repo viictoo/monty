@@ -63,7 +63,7 @@ void rotl_func(stack_t **head, unsigned int line_number);
 void rotr_func(stack_t **head, unsigned int line_number);
 void validate_arguments(int ac, char **av);
 void handle_unknown_instruction(int line_number, char *instruct,
-		char *opcode, FILE *fp);
+		char *opcode, FILE *fp, stack_t **stack);
 void parse_file(FILE *fp);
 void free_stack(stack_t *stack);
 bool is_integer(const char *str);
